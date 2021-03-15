@@ -1,0 +1,539 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:272), pid=16344, tid=0x00000000000067b4
+#
+# JRE version: OpenJDK Runtime Environment (8.0_232-b09) (build 1.8.0_232-b09)
+# Java VM: OpenJDK 64-Bit Server VM (25.232-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002131292f800):  JavaThread "munit.01" [_thread_in_vm, id=26548, stack(0x0000009728600000,0x0000009728700000)]
+
+Stack: [0x0000009728600000,0x0000009728700000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 544  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x000002130024ebdf [0x000002130024eb40+0x9f]
+J 4880 C2 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; (43 bytes) @ 0x0000021300f63bbc [0x0000021300f636e0+0x4dc]
+J 260 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x00000213001a4de4 [0x00000213001a3240+0x1ba4]
+J 9253 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x0000021300d273ac [0x0000021300d270e0+0x2cc]
+J 6066 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000213012ea43c [0x00000213012ea3c0+0x7c]
+v  ~StubRoutines::call_stub
+J 141  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x000002130015a8a6 [0x000002130015a840+0x66]
+J 4534 C2 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x000002130044a468 [0x000002130044a3c0+0xa8]
+J 6209 C1 org.mule.runtime.module.artifact.api.classloader.FineGrainedControlClassLoader.findLocalClass(Ljava/lang/String;)Ljava/lang/Class; (37 bytes) @ 0x0000021301368444 [0x0000021301367e20+0x624]
+J 8014 C1 org.mule.runtime.module.artifact.api.classloader.FineGrainedControlClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (223 bytes) @ 0x0000021301922244 [0x0000021301920280+0x1fc4]
+J 5633 C1 org.mule.runtime.module.artifact.api.classloader.MuleArtifactClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (56 bytes) @ 0x0000021301195944 [0x00000213011958c0+0x84]
+J 4455 C2 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x0000021300547bc0 [0x0000021300547b80+0x40]
+v  ~StubRoutines::call_stub
+J 544  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x000002130024ebdf [0x000002130024eb40+0x9f]
+J 4880 C2 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; (43 bytes) @ 0x0000021300f63bbc [0x0000021300f636e0+0x4dc]
+J 260 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x00000213001a4de4 [0x00000213001a3240+0x1ba4]
+J 9253 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x0000021300d273ac [0x0000021300d270e0+0x2cc]
+J 6066 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000213012ea43c [0x00000213012ea3c0+0x7c]
+v  ~StubRoutines::call_stub
+J 141  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x000002130015a8a6 [0x000002130015a840+0x66]
+J 4534 C2 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x000002130044a468 [0x000002130044a3c0+0xa8]
+J 6209 C1 org.mule.runtime.module.artifact.api.classloader.FineGrainedControlClassLoader.findLocalClass(Ljava/lang/String;)Ljava/lang/Class; (37 bytes) @ 0x0000021301368444 [0x0000021301367e20+0x624]
+J 8014 C1 org.mule.runtime.module.artifact.api.classloader.FineGrainedControlClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (223 bytes) @ 0x0000021301922244 [0x0000021301920280+0x1fc4]
+J 5633 C1 org.mule.runtime.module.artifact.api.classloader.MuleArtifactClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (56 bytes) @ 0x0000021301195944 [0x00000213011958c0+0x84]
+J 4455 C2 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x0000021300547bc0 [0x0000021300547b80+0x40]
+v  ~StubRoutines::call_stub
+j  org.mule.weave.v2.parser.ModuleParser$.parse(Lorg/mule/weave/v2/parser/phase/ParsingContentInput;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/util/Either;+0
+j  org.mule.weave.v2.parser.ModuleParser$.$anonfun$parsingPhase$1(Lorg/mule/weave/v2/parser/phase/ParsingContentInput;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/util/Either;+5
+j  org.mule.weave.v2.parser.ModuleParser$$$Lambda$1934.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.mule.weave.v2.parser.phase.ParsingPhase.doParse(Lorg/mule/weave/v2/parser/phase/ParsingContentInput;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/Option;+6
+j  org.mule.weave.v2.parser.phase.ParsingPhase.doCall(Lorg/mule/weave/v2/parser/phase/ParsingContentInput;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+3
+j  org.mule.weave.v2.parser.phase.ParsingPhase.doCall(Ljava/lang/Object;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+6
+j  org.mule.weave.v2.parser.phase.CompilationPhase.call(Ljava/lang/Object;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+15
+j  org.mule.weave.v2.parser.phase.CompilationPhase.call$(Lorg/mule/weave/v2/parser/phase/CompilationPhase;Ljava/lang/Object;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+3
+j  org.mule.weave.v2.parser.phase.ParsingPhase.call(Ljava/lang/Object;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+3
+j  org.mule.weave.v2.parser.phase.CompositeCompilationPhase.doCall(Ljava/lang/Object;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+6
+j  org.mule.weave.v2.parser.phase.CompilationPhase.call(Ljava/lang/Object;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+15
+j  org.mule.weave.v2.parser.phase.CompilationPhase.call$(Lorg/mule/weave/v2/parser/phase/CompilationPhase;Ljava/lang/Object;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+3
+j  org.mule.weave.v2.parser.phase.CompositeCompilationPhase.call(Ljava/lang/Object;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+3
+j  org.mule.weave.v2.parser.ModuleParser$.parse(Lorg/mule/weave/v2/parser/phase/CompilationPhase;Lorg/mule/weave/v2/sdk/WeaveResource;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+30
+j  org.mule.weave.v2.parser.phase.ResourceBasedModuleParser.parserAsModule(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/sdk/WeaveResource;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+21
+j  org.mule.weave.v2.parser.phase.ResourceBasedModuleParser.$anonfun$loadModule$4(Lorg/mule/weave/v2/parser/phase/ResourceBasedModuleParser;Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;Lorg/mule/weave/v2/sdk/WeaveResource;)Lorg/mule/weave/v2/parser/phase/PhaseResult;+4
+j  org.mule.weave.v2.parser.phase.ResourceBasedModuleParser$$Lambda$1931.apply(Ljava/lang/Object;)Ljava/lang/Object;+16
+j  scala.Option.map(Lscala/Function1;)Lscala/Option;+20
+j  org.mule.weave.v2.parser.phase.ResourceBasedModuleParser.loadModule(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/Option;+87
+j  org.mule.weave.v2.parser.phase.ModuleLoaderManager.$anonfun$loadModule$3(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;Lorg/mule/weave/v2/parser/phase/ModuleLoader;)Lscala/collection/Iterable;+6
+j  org.mule.weave.v2.parser.phase.ModuleLoaderManager$$Lambda$1925.apply(Ljava/lang/Object;)Ljava/lang/Object;+12
+j  scala.collection.immutable.Stream.flatMap(Lscala/Function1;Lscala/collection/generic/CanBuildFrom;)Ljava/lang/Object;+43
+j  org.mule.weave.v2.parser.phase.ModuleLoaderManager.loadModule(Lscala/collection/Seq;Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/Option;+19
+j  org.mule.weave.v2.parser.phase.ModuleLoaderManager.$anonfun$loadModule$2(Lorg/mule/weave/v2/parser/phase/ModuleLoaderManager;Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;Lscala/collection/Seq;)Lscala/Option;+4
+j  org.mule.weave.v2.parser.phase.ModuleLoaderManager$$Lambda$1923.apply(Ljava/lang/Object;)Ljava/lang/Object;+16
+j  scala.Option.flatMap(Lscala/Function1;)Lscala/Option;+16
+j  org.mule.weave.v2.parser.phase.ModuleLoaderManager.loadModule(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/Option;+34
+j  org.mule.weave.v2.parser.phase.DefaultModuleParsingPhasesManager.parseModule(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/Option;+71
+j  org.mule.weave.v2.parser.phase.DefaultModuleParsingPhasesManager.scopeCheckModule(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/Option;+60
+j  org.mule.weave.v2.interpreted.CustomRuntimeModuleNodeCompiler.localCompile(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;Lorg/mule/weave/v2/interpreted/RuntimeModuleNodeCompiler;)Lscala/Option;+31
+j  org.mule.weave.v2.interpreted.CustomRuntimeModuleNodeCompiler.$anonfun$compile$5(Lorg/mule/weave/v2/interpreted/CustomRuntimeModuleNodeCompiler;Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;Lorg/mule/weave/v2/interpreted/RuntimeModuleNodeCompiler;)Lscala/Option;+4
+j  org.mule.weave.v2.interpreted.CustomRuntimeModuleNodeCompiler$$Lambda$1921.apply()Ljava/lang/Object;+16
+j  scala.Option.orElse(Lscala/Function0;)Lscala/Option;+8
+j  org.mule.weave.v2.interpreted.CustomRuntimeModuleNodeCompiler.compile(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;Lorg/mule/weave/v2/interpreted/RuntimeModuleNodeCompiler;)Lscala/Option;+57
+j  org.mule.weave.v2.interpreted.CustomRuntimeModuleNodeCompiler.compile(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;Lorg/mule/weave/v2/parser/phase/ParsingContext;)Lscala/Option;+4
+j  org.mule.weave.v2.el.MuleServiceLevelModuleManager.loadModule(Lorg/mule/weave/v2/parser/ast/variables/NameIdentifier;)Z+51
+j  org.mule.weave.v2.el.WeaveDefaultExpressionLanguageFactoryService.<init>(Lorg/mule/runtime/api/scheduler/SchedulerService;)V+30
+j  org.mule.weave.v2.el.WeaveServiceProvider.getServiceDefinition()Lorg/mule/runtime/api/service/ServiceDefinition;+21
+j  org.mule.runtime.module.service.internal.manager.LazyServiceProxy.instantiateService()Lorg/mule/runtime/api/service/Service;+19
+j  org.mule.runtime.module.service.internal.manager.LazyServiceProxy.lambda$null$0()Lorg/mule/runtime/api/service/Service;+1
+j  org.mule.runtime.module.service.internal.manager.LazyServiceProxy$$Lambda$1663.call()Ljava/lang/Object;+4
+j  org.mule.runtime.core.api.util.ExceptionUtils.tryExpecting(Ljava/lang/Class;Ljava/util/concurrent/Callable;Lorg/mule/runtime/core/api/util/ExceptionHandler;)Ljava/lang/Object;+1
+j  org.mule.runtime.core.api.util.ClassUtils.withContextClassLoader(Ljava/lang/ClassLoader;Ljava/util/concurrent/Callable;Ljava/lang/Class;Lorg/mule/runtime/core/api/util/ExceptionHandler;)Ljava/lang/Object;+27
+j  org.mule.runtime.core.api.util.ClassUtils.withContextClassLoader(Ljava/lang/ClassLoader;Ljava/util/concurrent/Callable;)Ljava/lang/Object;+9
+j  org.mule.runtime.module.service.internal.manager.LazyServiceProxy.withServiceClassLoader(Ljava/util/concurrent/Callable;)Ljava/lang/Object;+10
+j  org.mule.runtime.module.service.internal.manager.LazyServiceProxy.lambda$createService$1()Lorg/mule/runtime/api/service/Service;+7
+j  org.mule.runtime.module.service.internal.manager.LazyServiceProxy$$Lambda$218.getChecked()Ljava/lang/Object;+4
+J 8620 C1 org.mule.runtime.core.api.util.func.CheckedSupplier.get()Ljava/lang/Object; (16 bytes) @ 0x0000021301a31b4c [0x0000021301a31a40+0x10c]
+J 9182 C1 org.mule.runtime.api.util.LazyValue.get()Ljava/lang/Object; (56 bytes) @ 0x0000021300b28cd4 [0x0000021300b28a80+0x254]
+j  org.mule.runtime.module.service.internal.manager.LazyServiceProxy.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+118
+j  com.sun.proxy.$Proxy37.create(Lorg/mule/runtime/api/el/ExpressionLanguageConfiguration;)Lorg/mule/runtime/api/el/ExpressionLanguage;+16
+j  org.mule.runtime.core.internal.el.dataweave.DataWeaveExpressionLanguageAdaptor.<init>(Lorg/mule/runtime/core/api/MuleContext;Lorg/mule/runtime/api/artifact/Registry;Lorg/mule/runtime/api/el/DefaultExpressionLanguageFactoryService;)V+19
+j  org.mule.runtime.core.internal.el.DefaultExpressionManager.createWeaveExpressionLanguageAdaptor(Lorg/mule/runtime/api/el/DefaultExpressionLanguageFactoryService;)Lorg/mule/runtime/core/internal/el/dataweave/DataWeaveExpressionLanguageAdaptor;+13
+j  org.mule.runtime.core.internal.el.DefaultExpressionManager.lambda$createExpressionLanguageAdaptor$0(Lorg/mule/runtime/api/el/DefaultExpressionLanguageFactoryService;)Lorg/mule/runtime/core/internal/el/ExtendedExpressionLanguageAdaptor;+2
+j  org.mule.runtime.core.internal.el.DefaultExpressionManager$$Lambda$1636.getChecked()Ljava/lang/Object;+8
+J 8620 C1 org.mule.runtime.core.api.util.func.CheckedSupplier.get()Ljava/lang/Object; (16 bytes) @ 0x0000021301a31b4c [0x0000021301a31a40+0x10c]
+j  org.mule.runtime.core.internal.el.LazyExpressionLanguageAdaptor.delegate()Lorg/mule/runtime/core/internal/el/ExtendedExpressionLanguageAdaptor;+23
+j  org.mule.runtime.core.internal.el.LazyExpressionLanguageAdaptor.compile(Ljava/lang/String;Lorg/mule/runtime/api/el/BindingContext;)Lorg/mule/runtime/api/el/CompiledExpression;+1
+j  org.mule.runtime.core.internal.el.DefaultExpressionManager.compile(Ljava/lang/String;Lorg/mule/runtime/api/el/BindingContext;)Lorg/mule/runtime/api/el/CompiledExpression;+6
+v  ~StubRoutines::call_stub
+J 1946  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (0 bytes) @ 0x000002130068ca7f [0x000002130068ca00+0x7f]
+J 1945 C1 sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (104 bytes) @ 0x000002130068ebbc [0x000002130068d9c0+0x11fc]
+J 4224 C2 java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (62 bytes) @ 0x000002130038fa88 [0x000002130038f9e0+0xa8]
+j  org.mule.runtime.core.internal.execution.ClassLoaderInjectorInvocationHandler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+24
+j  com.sun.proxy.$Proxy134.compile(Ljava/lang/String;Lorg/mule/runtime/api/el/BindingContext;)Lorg/mule/runtime/api/el/CompiledExpression;+20
+j  org.mule.runtime.core.internal.el.ExpressionLanguageUtils.compile(Ljava/lang/String;Lorg/mule/runtime/api/el/ExpressionLanguage;)Lorg/mule/runtime/api/el/CompiledExpression;+5
+j  org.mule.runtime.core.privileged.util.AttributeEvaluator.getEvaluator(Lorg/mule/runtime/api/metadata/DataType;)Lorg/mule/runtime/core/privileged/util/attribute/AttributeEvaluatorDelegate;+35
+j  org.mule.runtime.core.privileged.util.AttributeEvaluator.initialize(Lorg/mule/runtime/core/api/el/ExtendedExpressionManager;)Lorg/mule/runtime/core/privileged/util/AttributeEvaluator;+11
+j  org.mule.runtime.module.extension.internal.runtime.resolver.ExpressionValueResolver.initialise()V+15
+j  org.mule.runtime.module.extension.internal.runtime.resolver.ExpressionTypedValueValueResolver.initialise()V+1
+j  org.mule.runtime.core.api.lifecycle.LifecycleUtils.initialiseIfNeeded(Ljava/lang/Object;)V+16
+j  org.mule.runtime.core.api.lifecycle.LifecycleUtils.initialiseIfNeeded(Ljava/lang/Object;ZLorg/mule/runtime/core/api/MuleContext;)V+120
+j  org.mule.runtime.core.api.lifecycle.LifecycleUtils.initialiseIfNeeded(Ljava/lang/Object;Lorg/mule/runtime/core/api/MuleContext;)V+3
+j  org.mule.runtime.module.extension.internal.runtime.resolver.ResolverUtils.getExpressionBasedValueResolver(Ljava/lang/String;Ljava/util/function/BooleanSupplier;Ljava/util/function/BooleanSupplier;Ljava/util/Optional;Lorg/mule/metadata/api/model/MetadataType;Lorg/mule/runtime/core/api/MuleContext;)Lorg/mule/runtime/module/extension/internal/runtime/resolver/ValueResolver;+255
+j  org.mule.runtime.module.extension.internal.runtime.resolver.ResolverUtils.getExpressionBasedValueResolver(Ljava/lang/String;Lorg/mule/metadata/api/model/MetadataType;Lorg/mule/runtime/core/api/MuleContext;)Lorg/mule/runtime/module/extension/internal/runtime/resolver/ValueResolver;+18
+j  org.mule.runtime.module.extension.internal.runtime.resolver.ResolverUtils.getFieldDefaultValueValueResolver(Lorg/mule/metadata/api/model/ObjectFieldType;Lorg/mule/runtime/core/api/MuleContext;)Lorg/mule/runtime/module/extension/internal/runtime/resolver/ValueResolver;+55
+j  org.mule.runtime.module.extension.internal.runtime.resolver.NullSafeValueResolverWrapper$1.visitObject(Lorg/mule/metadata/api/model/ObjectType;)V+259
+J 6469 C2 org.mule.metadata.api.model.impl.DefaultObjectType.accept(Lorg/mule/metadata/api/visitor/MetadataTypeVisitor;)V (6 bytes) @ 0x0000021301440c44 [0x0000021301440c00+0x44]
+j  org.mule.runtime.module.extension.internal.runtime.resolver.NullSafeValueResolverWrapper.of(Lorg/mule/runtime/module/extension/internal/runtime/resolver/ValueResolver;Lorg/mule/metadata/api/model/MetadataType;Lorg/mule/runtime/module/extension/internal/util/ReflectionCache;Lorg/mule/runtime/core/api/el/ExpressionManager;Lorg/mule/runtime/core/api/MuleContext;Lorg/mule/runtime/module/extension/internal/runtime/resolver/ObjectTypeParametersResolver;)Lorg/mule/runtime/module/extension/internal/runtime/resolver/ValueResolver;+40
+j  org.mule.runtime.module.extension.internal.runtime.resolver.ParametersResolver.getInlineGroupResolver(Lorg/mule/runtime/api/meta/model/parameter/ParameterGroupModel;Lorg/mule/runtime/module/extension/internal/runtime/resolver/ResolverSet;Lorg/mule/runtime/core/api/MuleContext;)V+132
+j  org.mule.runtime.module.extension.internal.runtime.resolver.ParametersResolver.getParametersAsResolverSet(Lorg/mule/runtime/api/meta/model/parameter/ParameterizedModel;Lorg/mule/runtime/core/api/MuleContext;)Lorg/mule/runtime/module/extension/internal/runtime/resolver/ResolverSet;+70
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory.getCallbackParameters(Ljava/util/Optional;)Lorg/mule/runtime/module/extension/internal/runtime/resolver/ResolverSet;+22
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory.lambda$doGetObject$0()Lorg/mule/runtime/module/extension/internal/runtime/source/ExtensionMessageSource;+65
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$Lambda$1890.call()Ljava/lang/Object;+4
+j  org.mule.runtime.core.api.util.ExceptionUtils.tryExpecting(Ljava/lang/Class;Ljava/util/concurrent/Callable;Lorg/mule/runtime/core/api/util/ExceptionHandler;)Ljava/lang/Object;+1
+j  org.mule.runtime.core.api.util.ClassUtils.withContextClassLoader(Ljava/lang/ClassLoader;Ljava/util/concurrent/Callable;Ljava/lang/Class;Lorg/mule/runtime/core/api/util/ExceptionHandler;)Ljava/lang/Object;+27
+j  org.mule.runtime.core.api.util.ClassUtils.withContextClassLoader(Ljava/lang/ClassLoader;Ljava/util/concurrent/Callable;)Ljava/lang/Object;+9
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory.doGetObject()Lorg/mule/runtime/module/extension/internal/runtime/source/ExtensionMessageSource;+13
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7.CGLIB$doGetObject$1()Lorg/mule/runtime/module/extension/internal/runtime/source/ExtensionMessageSource;+1
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7$$FastClassByCGLIB$$4c4f44f1.invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+396
+j  net.sf.cglib.proxy.MethodProxy.invokeSuper(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.mule.runtime.config.internal.dsl.spring.ObjectFactoryClassRepository.lambda$getObjectFactoryDynamicClass$1(Ljava/util/function/Supplier;ZLjava/lang/Class;Ljava/util/Optional;Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;Lnet/sf/cglib/proxy/MethodProxy;)Ljava/lang/Object;+157
+j  org.mule.runtime.config.internal.dsl.spring.ObjectFactoryClassRepository$$Lambda$1776.intercept(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;Lnet/sf/cglib/proxy/MethodProxy;)Ljava/lang/Object;+21
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7.doGetObject()Lorg/mule/runtime/module/extension/internal/runtime/source/ExtensionMessageSource;+31
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory.doGetObject()Ljava/lang/Object;+1
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7.CGLIB$doGetObject$2()Ljava/lang/Object;+1
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7$$FastClassByCGLIB$$4c4f44f1.invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+400
+j  net.sf.cglib.proxy.MethodProxy.invokeSuper(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.mule.runtime.config.internal.dsl.spring.ObjectFactoryClassRepository.lambda$getObjectFactoryDynamicClass$1(Ljava/util/function/Supplier;ZLjava/lang/Class;Ljava/util/Optional;Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;Lnet/sf/cglib/proxy/MethodProxy;)Ljava/lang/Object;+157
+j  org.mule.runtime.config.internal.dsl.spring.ObjectFactoryClassRepository$$Lambda$1776.intercept(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;Lnet/sf/cglib/proxy/MethodProxy;)Ljava/lang/Object;+21
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7.doGetObject()Ljava/lang/Object;+31
+j  org.mule.runtime.dsl.api.component.AbstractComponentFactory.getObject()Ljava/lang/Object;+1
+j  org.mule.runtime.module.extension.internal.config.dsl.AbstractExtensionObjectFactory.getObject()Ljava/lang/Object;+1
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7.CGLIB$getObject$10()Ljava/lang/Object;+1
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7$$FastClassByCGLIB$$4c4f44f1.invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+432
+j  net.sf.cglib.proxy.MethodProxy.invokeSuper(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+19
+j  org.mule.runtime.config.internal.dsl.spring.ObjectFactoryClassRepository.lambda$getObjectFactoryDynamicClass$1(Ljava/util/function/Supplier;ZLjava/lang/Class;Ljava/util/Optional;Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;Lnet/sf/cglib/proxy/MethodProxy;)Ljava/lang/Object;+95
+j  org.mule.runtime.config.internal.dsl.spring.ObjectFactoryClassRepository$$Lambda$1776.intercept(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;Lnet/sf/cglib/proxy/MethodProxy;)Ljava/lang/Object;+21
+j  org.mule.runtime.module.extension.internal.config.dsl.source.ExtensionSourceObjectFactory$$EnhancerByCGLIB$$3da53db7.getObject()Ljava/lang/Object;+31
+j  org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(Lorg/springframework/beans/factory/FactoryBean;Ljava/lang/String;)Ljava/lang/Object;+44
+j  org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(Lorg/springframework/beans/factory/FactoryBean;Ljava/lang/String;Z)Ljava/lang/Object;+177
+j  org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(Ljava/lang/Object;Ljava/lang/String;Lorg/springframework/beans/factory/config/BeanDefinition;)Ljava/lang/Object;+164
+j  org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+159
+J 8754 C1 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(Ljava/lang/String;Lorg/springframework/beans/factory/config/BeanDefinition;Lorg/springframework/beans/BeanWrapper;Lorg/springframework/beans/PropertyValues;)V (459 bytes) @ 0x0000021301ac5a5c [0x0000021301ac4100+0x195c]
+J 8475 C1 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(Ljava/lang/String;Lorg/springframework/beans/factory/support/RootBeanDefinition;Lorg/springframework/beans/BeanWrapper;)V (412 bytes) @ 0x0000021300e3a1b4 [0x0000021300e373c0+0x2df4]
+j  org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(Ljava/lang/String;Lorg/springframework/beans/factory/support/RootBeanDefinition;[Ljava/lang/Object;)Ljava/lang/Object;+237
+j  org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(Ljava/lang/String;Lorg/springframework/beans/factory/support/RootBeanDefinition;[Ljava/lang/Object;)Ljava/lang/Object;+169
+j  org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(Ljava/lang/String;Lorg/springframework/beans/factory/support/RootBeanDefinition;[Ljava/lang/Object;)Ljava/lang/Object;+4
+j  org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1588.getObject()Ljava/lang/Object;+16
+j  org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(Ljava/lang/String;Lorg/springframework/beans/factory/ObjectFactory;)Ljava/lang/Object;+132
+J 8561 C1 org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Object;Z)Ljava/lang/Object; (833 bytes) @ 0x00000213019fc69c [0x00000213019fa940+0x1d5c]
+J 8629 C1 org.mule.runtime.config.internal.ObjectProviderAwareBeanFactory.getBean(Ljava/lang/String;)Ljava/lang/Object; (93 bytes) @ 0x0000021301a3d33c [0x0000021301a3d1c0+0x17c]
+J 8695 C1 org.springframework.context.support.AbstractApplicationContext.getBean(Ljava/lang/String;)Ljava/lang/Object; (15 bytes) @ 0x0000021301a6838c [0x0000021301a68120+0x26c]
+j  org.mule.runtime.config.internal.SpringRegistry.lookupObject(Ljava/lang/String;Z)Ljava/lang/Object;+62
+J 8694 C1 org.mule.runtime.config.internal.SpringRegistry.lookupObject(Ljava/lang/String;)Ljava/lang/Object; (10 bytes) @ 0x0000021301a687d4 [0x0000021301a68740+0x94]
+j  org.mule.runtime.core.internal.registry.MuleRegistryHelper.lookupObject(Ljava/lang/String;)Ljava/lang/Object;+5
+j  org.mule.runtime.core.internal.registry.DefaultRegistry.lookupByName(Ljava/lang/String;)Ljava/util/Optional;+10
+j  org.mule.runtime.config.internal.LazyMuleArtifactContext.lambda$createBeans$33(Ljava/util/Map;Lorg/mule/runtime/api/util/Pair;)V+11
+j  org.mule.runtime.config.internal.LazyMuleArtifactContext$$Lambda$1816.accept(Ljava/lang/Object;)V+12
+J 6045 C1 java.util.ArrayList.forEach(Ljava/util/function/Consumer;)V (75 bytes) @ 0x00000213012e6b4c [0x00000213012e6940+0x20c]
+j  org.mule.runtime.config.internal.LazyMuleArtifactContext.createBeans(Ljava/util/List;)Ljava/util/List;+23
+j  org.mule.runtime.config.internal.LazyMuleArtifactContext.lambda$createComponents$21(Ljava/util/Optional;Ljava/util/Optional;ZLjava/util/Optional;)Ljava/util/List;+283
+j  org.mule.runtime.config.internal.LazyMuleArtifactContext$$Lambda$1736.call()Ljava/lang/Object;+20
+j  org.mule.runtime.core.api.util.ExceptionUtils.tryExpecting(Ljava/lang/Class;Ljava/util/concurrent/Callable;Lorg/mule/runtime/core/api/util/ExceptionHandler;)Ljava/lang/Object;+1
+j  org.mule.runtime.core.api.util.ClassUtils.withContextClassLoader(Ljava/lang/ClassLoader;Ljava/util/concurrent/Callable;Ljava/lang/Class;Lorg/mule/runtime/core/api/util/ExceptionHandler;)Ljava/lang/Object;+27
+j  org.mule.runtime.core.api.util.ClassUtils.withContextClassLoader(Ljava/lang/ClassLoader;Ljava/util/concurrent/Callable;)Ljava/lang/Object;+9
+j  org.mule.runtime.config.internal.LazyMuleArtifactContext.createComponents(Ljava/util/Optional;Ljava/util/Optional;ZLjava/util/Optional;)Ljava/util/List;+41
+j  org.mule.runtime.config.internal.LazyMuleArtifactContext.initializeComponents(Lorg/mule/runtime/config/api/LazyComponentInitializer$ComponentLocationFilter;Z)V+20
+j  org.mule.runtime.config.internal.LazyMuleArtifactContext.initializeComponents(Lorg/mule/runtime/config/api/LazyComponentInitializer$ComponentLocationFilter;)V+3
+j  org.mule.munit.runner.config.TestComponentLocator.initializeComponents(Ljava/lang/String;)V+11
+j  org.mule.munit.runner.model.builders.SuiteBuilder.build()Lorg/mule/munit/runner/model/Suite;+8
+j  org.mule.munit.runner.remote.api.server.RunMessageHandler.buildSuite(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Set;Lorg/mule/munit/common/protocol/listeners/SuiteRunEventListener;)Lorg/mule/munit/runner/model/Suite;+31
+j  org.mule.munit.runner.remote.api.server.RunMessageHandler.parseSuiteMessage(Lorg/mule/munit/common/protocol/message/RunMessage;Lorg/mule/munit/common/protocol/listeners/SuiteRunEventListener;)Lorg/mule/munit/runner/model/Suite;+36
+j  org.mule.munit.runner.remote.api.server.RunMessageHandler.parseAndRun(Lorg/mule/munit/common/protocol/message/RunMessage;Lorg/mule/munit/common/protocol/listeners/SuiteRunEventListener;)V+3
+j  org.mule.munit.runner.remote.api.server.RunMessageHandler.handle()V+55
+j  org.mule.munit.runner.remote.api.server.RunnerServer.handleClientMessage(Ljava/io/ObjectInput;Ljava/io/ObjectOutput;)V+15
+j  org.mule.munit.runner.remote.api.server.RunnerServer.run()V+98
+j  java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object;+4
+j  java.util.concurrent.FutureTask.run()V+42
+j  org.mule.service.scheduler.internal.AbstractRunnableFutureDecorator.doRun(Ljava/util/concurrent/RunnableFuture;)V+133
+j  org.mule.service.scheduler.internal.RunnableFutureDecorator.run()V+5
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+95
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000021312934000 JavaThread "[cicd-sample].processing.time.monitor.01" [_thread_blocked, id=9860, stack(0x0000009728700000,0x0000009728800000)]
+=>0x000002131292f800 JavaThread "munit.01" [_thread_in_vm, id=26548, stack(0x0000009728600000,0x0000009728700000)]
+  0x000002131292c800 JavaThread "PolicyManager-StaleCleaner.01" [_thread_blocked, id=36284, stack(0x0000009728500000,0x0000009728600000)]
+  0x0000021312932000 JavaThread "StreamingManager-CursorProviderCollector.01" [_thread_blocked, id=21284, stack(0x0000009728400000,0x0000009728500000)]
+  0x0000021312933800 JavaThread "[MuleRuntime].timer" [_thread_blocked, id=26100, stack(0x0000009728300000,0x0000009728400000)]
+  0x000002131292f000 JavaThread "Scheduler Maintenance.01" [_thread_blocked, id=15776, stack(0x0000009728200000,0x0000009728300000)]
+  0x000002131292e000 JavaThread "[MuleRuntime]._QuartzSchedulerThread" [_thread_blocked, id=55840, stack(0x0000009728100000,0x0000009728200000)]
+  0x000002131292a800 JavaThread "[MuleRuntime]._qz-1" [_thread_blocked, id=51156, stack(0x0000009728000000,0x0000009728100000)]
+  0x000002131292b000 JavaThread "[MuleRuntime].uber.04" [_thread_blocked, id=38332, stack(0x0000009727f00000,0x0000009728000000)]
+  0x000002131292d800 JavaThread "[MuleRuntime].uber.03" [_thread_blocked, id=16020, stack(0x0000009727e00000,0x0000009727f00000)]
+  0x000002131292c000 JavaThread "[MuleRuntime].uber.02" [_thread_blocked, id=51412, stack(0x0000009727d00000,0x0000009727e00000)]
+  0x0000021312930800 JavaThread "[MuleRuntime].uber.01" [_thread_blocked, id=33416, stack(0x0000009727c00000,0x0000009727d00000)]
+  0x00000213184fe800 JavaThread "Log4j2-TF-4-AsyncLoggerConfig-4" daemon [_thread_blocked, id=38336, stack(0x0000009727900000,0x0000009727a00000)]
+  0x00000213184fb800 JavaThread "pool-3-thread-1" [_thread_in_native, id=50980, stack(0x0000009727800000,0x0000009727900000)]
+  0x0000021318500000 JavaThread "Mule.app.deployer.monitor.1.thread.1" [_thread_blocked, id=26792, stack(0x0000009727700000,0x0000009727800000)]
+  0x0000021315cc4800 JavaThread "ForkJoinPool.commonPool-worker-3" daemon [_thread_blocked, id=17336, stack(0x0000009727600000,0x0000009727700000)]
+  0x00000213137d9800 JavaThread "Log4j2-TF-3-AsyncLoggerConfig-3" daemon [_thread_blocked, id=43820, stack(0x0000009727400000,0x0000009727500000)]
+  0x00000213111a6800 JavaThread "[LicenseManager]" [_thread_in_Java, id=7348, stack(0x0000009727300000,0x0000009727400000)]
+  0x00000213140d1800 JavaThread "Log4j2-TF-2-AsyncLoggerConfig-2" daemon [_thread_blocked, id=43852, stack(0x0000009727200000,0x0000009727300000)]
+  0x0000021314ed3800 JavaThread "ForkJoinPool.commonPool-worker-1" daemon [_thread_blocked, id=37736, stack(0x0000009727100000,0x0000009727200000)]
+  0x0000021312ca4000 JavaThread "logger.context.reaper" [_thread_blocked, id=53212, stack(0x0000009727000000,0x0000009727100000)]
+  0x00000213127a6800 JavaThread "Log4j2-TF-1-AsyncLoggerConfig-1" daemon [_thread_blocked, id=52320, stack(0x0000009726f00000,0x0000009727000000)]
+  0x00000213114d6000 JavaThread "Embedded" [_thread_blocked, id=37232, stack(0x0000009726e00000,0x0000009726f00000)]
+  0x00000213111f9800 JavaThread "Log4j2-TF-3-AsyncLoggerConfig--2" daemon [_thread_blocked, id=18324, stack(0x0000009726d00000,0x0000009726e00000)]
+  0x0000021311111000 JavaThread "Log4j2-TF-1-AsyncLoggerConfig--1" daemon [_thread_blocked, id=42156, stack(0x0000009726c00000,0x0000009726d00000)]
+  0x000002130ffe7800 JavaThread "Service Thread" daemon [_thread_blocked, id=45240, stack(0x0000009726a00000,0x0000009726b00000)]
+  0x000002130ff72800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=44592, stack(0x0000009726900000,0x0000009726a00000)]
+  0x000002130ff58000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=43944, stack(0x0000009726800000,0x0000009726900000)]
+  0x000002130ff4b800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=27120, stack(0x0000009726700000,0x0000009726800000)]
+  0x000002130ff4a800 JavaThread "Attach Listener" daemon [_thread_blocked, id=11736, stack(0x0000009726600000,0x0000009726700000)]
+  0x000002130ff47800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=39712, stack(0x0000009726500000,0x0000009726600000)]
+  0x000002137ffc6000 JavaThread "Finalizer" daemon [_thread_blocked, id=26888, stack(0x0000009726400000,0x0000009726500000)]
+  0x000002130ff25800 JavaThread "Reference Handler" daemon [_thread_blocked, id=11420, stack(0x0000009726300000,0x0000009726400000)]
+  0x0000021374cf5000 JavaThread "main" [_thread_in_native, id=46744, stack(0x0000009725d00000,0x0000009725e00000)]
+
+Other Threads:
+  0x000002130ff02800 VMThread [stack: 0x0000009726200000,0x0000009726300000] [id=33356]
+  0x000002130ffe9800 WatcherThread [stack: 0x0000009726b00000,0x0000009726c00000] [id=33456]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c1e00000, size: 4066 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 547840K, used 422575K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 80% used [0x000000076b500000,0x00000007851abf00,0x000000078b500000)
+  from space 23552K, 0% used [0x000000078ce00000,0x000000078ce00000,0x000000078e500000)
+  to   space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+ ParOldGen       total 196096K, used 40176K [0x00000006c1e00000, 0x00000006cdd80000, 0x000000076b500000)
+  object space 196096K, 20% used [0x00000006c1e00000,0x00000006c453c340,0x00000006cdd80000)
+ Metaspace       used 73764K, capacity 80598K, committed 80728K, reserved 1120256K
+  class space    used 9627K, capacity 10788K, committed 10880K, reserved 1048576K
+
+Card table byte_map: [0x0000021376a20000,0x0000021377220000] byte_map_base: 0x0000021373411000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006c445f70
+ Begin Bits: [0x0000021377770000, 0x000002137b6f8000)
+ End Bits:   [0x000002137b6f8000, 0x000002137f680000)
+
+Polling page: 0x0000021376630000
+
+CodeCache: size=245760Kb used=27218Kb max_used=28240Kb free=218541Kb
+ bounds [0x0000021300000000, 0x0000021301bd0000, 0x000002130f000000]
+ total_blobs=8202 nmethods=7611 adapters=503
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 43.354 Thread 0x000002130ff72800 9255       3       jdk.internal.org.objectweb.asm.ClassWriter::newConstItem (308 bytes)
+Event: 43.356 Thread 0x000002130ff72800 nmethod 9255 0x00000213019a2c50 code [0x00000213019a3120, 0x00000213019a6710]
+Event: 43.358 Thread 0x000002130ff72800 9256       3       sun.invoke.util.Wrapper::isSubwordOrInt (20 bytes)
+Event: 43.359 Thread 0x000002130ff72800 nmethod 9256 0x00000213010210d0 code [0x0000021301021260, 0x0000021301021838]
+Event: 43.359 Thread 0x000002130ff72800 9257       3       sun.invoke.util.Wrapper::isIntegral (23 bytes)
+Event: 43.359 Thread 0x000002130ff72800 nmethod 9257 0x0000021301a32bd0 code [0x0000021301a32d40, 0x0000021301a33078]
+Event: 43.359 Thread 0x000002130ff72800 9258       3       sun.invoke.util.Wrapper::isNumeric (16 bytes)
+Event: 43.359 Thread 0x000002130ff72800 nmethod 9258 0x000002130063de90 code [0x000002130063dfe0, 0x000002130063e198]
+Event: 43.379 Thread 0x000002130ff58000 9262       4       sun.net.www.protocol.file.Handler::parseURL (18 bytes)
+Event: 43.394 Thread 0x000002130ff58000 nmethod 9262 0x0000021300b43190 code [0x0000021300b43300, 0x0000021300b43828]
+
+GC Heap History (10 events):
+Event: 14.835 GC heap before
+{Heap before GC invocations=7 (full 1):
+ PSYoungGen      total 547840K, used 13897K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076b500000,0x000000076b500000,0x000000078b500000)
+  from space 23552K, 59% used [0x000000078ce00000,0x000000078db924e0,0x000000078e500000)
+  to   space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+ ParOldGen       total 175104K, used 25276K [0x00000006c1e00000, 0x00000006cc900000, 0x000000076b500000)
+  object space 175104K, 14% used [0x00000006c1e00000,0x00000006c36af020,0x00000006cc900000)
+ Metaspace       used 20655K, capacity 21168K, committed 21248K, reserved 1069056K
+  class space    used 2354K, capacity 2503K, committed 2560K, reserved 1048576K
+Event: 14.884 GC heap after
+Heap after GC invocations=7 (full 1):
+ PSYoungGen      total 547840K, used 0K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076b500000,0x000000076b500000,0x000000078b500000)
+  from space 23552K, 0% used [0x000000078ce00000,0x000000078ce00000,0x000000078e500000)
+  to   space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+ ParOldGen       total 102912K, used 11576K [0x00000006c1e00000, 0x00000006c8280000, 0x000000076b500000)
+  object space 102912K, 11% used [0x00000006c1e00000,0x00000006c294e260,0x00000006c8280000)
+ Metaspace       used 20655K, capacity 21168K, committed 21248K, reserved 1069056K
+  class space    used 2354K, capacity 2503K, committed 2560K, reserved 1048576K
+}
+Event: 21.312 GC heap before
+{Heap before GC invocations=8 (full 1):
+ PSYoungGen      total 547840K, used 292695K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 55% used [0x000000076b500000,0x000000077d2d5c30,0x000000078b500000)
+  from space 23552K, 0% used [0x000000078ce00000,0x000000078ce00000,0x000000078e500000)
+  to   space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+ ParOldGen       total 102912K, used 11576K [0x00000006c1e00000, 0x00000006c8280000, 0x000000076b500000)
+  object space 102912K, 11% used [0x00000006c1e00000,0x00000006c294e260,0x00000006c8280000)
+ Metaspace       used 34258K, capacity 35242K, committed 35416K, reserved 1081344K
+  class space    used 4166K, capacity 4376K, committed 4480K, reserved 1048576K
+Event: 21.340 GC heap after
+Heap after GC invocations=8 (full 1):
+ PSYoungGen      total 548864K, used 21496K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076b500000,0x000000076b500000,0x000000078b500000)
+  from space 24576K, 87% used [0x000000078b500000,0x000000078c9fe3c8,0x000000078cd00000)
+  to   space 23552K, 0% used [0x000000078ce00000,0x000000078ce00000,0x000000078e500000)
+ ParOldGen       total 102912K, used 11584K [0x00000006c1e00000, 0x00000006c8280000, 0x000000076b500000)
+  object space 102912K, 11% used [0x00000006c1e00000,0x00000006c2950260,0x00000006c8280000)
+ Metaspace       used 34258K, capacity 35242K, committed 35416K, reserved 1081344K
+  class space    used 4166K, capacity 4376K, committed 4480K, reserved 1048576K
+}
+Event: 21.341 GC heap before
+{Heap before GC invocations=9 (full 2):
+ PSYoungGen      total 548864K, used 21496K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076b500000,0x000000076b500000,0x000000078b500000)
+  from space 24576K, 87% used [0x000000078b500000,0x000000078c9fe3c8,0x000000078cd00000)
+  to   space 23552K, 0% used [0x000000078ce00000,0x000000078ce00000,0x000000078e500000)
+ ParOldGen       total 102912K, used 11584K [0x00000006c1e00000, 0x00000006c8280000, 0x000000076b500000)
+  object space 102912K, 11% used [0x00000006c1e00000,0x00000006c2950260,0x00000006c8280000)
+ Metaspace       used 34258K, capacity 35242K, committed 35416K, reserved 1081344K
+  class space    used 4166K, capacity 4376K, committed 4480K, reserved 1048576K
+Event: 21.420 GC heap after
+Heap after GC invocations=9 (full 2):
+ PSYoungGen      total 548864K, used 0K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076b500000,0x000000076b500000,0x000000078b500000)
+  from space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+  to   space 23552K, 0% used [0x000000078ce00000,0x000000078ce00000,0x000000078e500000)
+ ParOldGen       total 149504K, used 29277K [0x00000006c1e00000, 0x00000006cb000000, 0x000000076b500000)
+  object space 149504K, 19% used [0x00000006c1e00000,0x00000006c3a975c8,0x00000006cb000000)
+ Metaspace       used 34258K, capacity 35242K, committed 35416K, reserved 1081344K
+  class space    used 4166K, capacity 4376K, committed 4480K, reserved 1048576K
+}
+Event: 30.497 GC heap before
+{Heap before GC invocations=10 (full 2):
+ PSYoungGen      total 548864K, used 354752K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 67% used [0x000000076b500000,0x0000000780f701f0,0x000000078b500000)
+  from space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+  to   space 23552K, 0% used [0x000000078ce00000,0x000000078ce00000,0x000000078e500000)
+ ParOldGen       total 149504K, used 29277K [0x00000006c1e00000, 0x00000006cb000000, 0x000000076b500000)
+  object space 149504K, 19% used [0x00000006c1e00000,0x00000006c3a975c8,0x00000006cb000000)
+ Metaspace       used 54313K, capacity 58836K, committed 58968K, reserved 1099776K
+  class space    used 7148K, capacity 7990K, committed 8064K, reserved 1048576K
+Event: 30.546 GC heap after
+Heap after GC invocations=10 (full 2):
+ PSYoungGen      total 547840K, used 23547K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076b500000,0x000000076b500000,0x000000078b500000)
+  from space 23552K, 99% used [0x000000078ce00000,0x000000078e4fee88,0x000000078e500000)
+  to   space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+ ParOldGen       total 149504K, used 32449K [0x00000006c1e00000, 0x00000006cb000000, 0x000000076b500000)
+  object space 149504K, 21% used [0x00000006c1e00000,0x00000006c3db07b8,0x00000006cb000000)
+ Metaspace       used 54313K, capacity 58836K, committed 58968K, reserved 1099776K
+  class space    used 7148K, capacity 7990K, committed 8064K, reserved 1048576K
+}
+Event: 30.546 GC heap before
+{Heap before GC invocations=11 (full 3):
+ PSYoungGen      total 547840K, used 23547K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076b500000,0x000000076b500000,0x000000078b500000)
+  from space 23552K, 99% used [0x000000078ce00000,0x000000078e4fee88,0x000000078e500000)
+  to   space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+ ParOldGen       total 149504K, used 32449K [0x00000006c1e00000, 0x00000006cb000000, 0x000000076b500000)
+  object space 149504K, 21% used [0x00000006c1e00000,0x00000006c3db07b8,0x00000006cb000000)
+ Metaspace       used 54313K, capacity 58836K, committed 58968K, reserved 1099776K
+  class space    used 7148K, capacity 7990K, committed 8064K, reserved 1048576K
+Event: 30.817 GC heap after
+Heap after GC invocations=11 (full 3):
+ PSYoungGen      total 547840K, used 0K [0x000000076b500000, 0x000000078e500000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076b500000,0x000000076b500000,0x000000078b500000)
+  from space 23552K, 0% used [0x000000078ce00000,0x000000078ce00000,0x000000078e500000)
+  to   space 24576K, 0% used [0x000000078b500000,0x000000078b500000,0x000000078cd00000)
+ ParOldGen       total 196096K, used 40176K [0x00000006c1e00000, 0x00000006cdd80000, 0x000000076b500000)
+  object space 196096K, 20% used [0x00000006c1e00000,0x00000006c453c340,0x00000006cdd80000)
+ Metaspace       used 54313K, capacity 58836K, committed 58968K, reserved 1099776K
+  class space    used 7148K, capacity 7990K, committed 8064K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 38.422 Thread 0x000002131292f800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000021301aa6a40 method=org.mule.runtime.config.internal.dsl.model.SpringComponentModel$1.tryAdvance(Ljava/util/function/Consumer;)Z @ 17
+Event: 38.562 Thread 0x000002131292f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000213006390b4 method=java.util.HashMap.hash(Ljava/lang/Object;)I @ 1
+Event: 38.565 Thread 0x000002131292f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000021301ab3a8c method=org.springframework.util.ClassUtils.isAssignable(Ljava/lang/Class;Ljava/lang/Class;)Z @ 44
+Event: 38.612 Thread 0x000002131292f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000021301b6737c method=net.sf.cglib.asm.$Type.appendDescriptor(Ljava/lang/Class;Ljava/lang/StringBuilder;)V @ 6
+Event: 38.994 Thread 0x000002131292f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000021300724b4c method=java.util.Collections$UnmodifiableMap.isEmpty()Z @ 4
+Event: 39.252 Thread 0x000002131292f800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00000213012d544c method=java.util.stream.ReferencePipeline.collect(Ljava/util/stream/Collector;)Ljava/lang/Object; @ 112
+Event: 39.265 Thread 0x000002131292f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000021300b9e8dc method=java.util.regex.Pattern$GroupTail.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 13
+Event: 39.267 Thread 0x000002131292f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000021300724b4c method=java.util.Collections$UnmodifiableMap.isEmpty()Z @ 4
+Event: 41.452 Thread 0x000002131292f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000021301415c08 method=jdk.internal.org.objectweb.asm.MethodWriter.visitMethodInsn(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V @ 70
+Event: 41.475 Thread 0x000002131292f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000021300f79b70 method=jdk.internal.org.objectweb.asm.ByteVector.putInt(I)Ljdk/internal/org/objectweb/asm/ByteVector; @ 13
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 39.261 Thread 0x000002131292f800 Exception <a 'java/lang/ClassNotFoundException': org/mule/runtime/module/extension/internal/runtime/resolver/ExpressionValueResolverCustomizer> (0x00000007834d09d8) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hotspot\workspace\build\src\hotspot\s
+Event: 39.262 Thread 0x000002131292f800 Exception <a 'java/lang/ClassNotFoundException': org/mule/runtime/module/extension/internal/runtime/resolver/ExpressionTypedValueValueResolverCustomizer> (0x000000078350fea0) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hotspot\workspace\build\src
+Event: 39.264 Thread 0x000002131292f800 Exception <a 'java/lang/ClassNotFoundException': org/mule/runtime/module/extension/internal/runtime/resolver/ExpressionBasedValueResolverBeanInfo> (0x00000007835537e8) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hotspot\workspace\build\src\hotspo
+Event: 39.265 Thread 0x000002131292f800 Exception <a 'java/lang/ClassNotFoundException': org/mule/runtime/module/extension/internal/runtime/resolver/ExpressionBasedValueResolverCustomizer> (0x0000000783588538) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hotspot\workspace\build\src\hots
+Event: 41.655 Thread 0x000002131292f800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$$plus$plus$eq$1(Lscala/collection/generic/Growable;Ljava/lang/Object;)Lscala/collection/generic/Growable;> (0x0000000784470ad8) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hots
+Event: 41.727 Thread 0x000002131292f800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$toStream$1(Lscala/collection/Iterator;)Lscala/collection/immutable/Stream;> (0x00000007845a47e0) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hotspot\workspace\build\src\hotspot
+Event: 43.135 Thread 0x000002131292f800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$groupBy$1(Lscala/collection/TraversableLike;Lscala/Function1;Lscala/collection/mutable/Map;Ljava/lang/Object;)Lscala/collection/mutable/Builder;> (0x0000000784662f28) thrown at [C:\cygw
+Event: 43.139 Thread 0x000002131292f800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$groupBy$2(Lscala/collection/TraversableLike;)Lscala/collection/mutable/Builder;> (0x000000078466dce0) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hotspot\workspace\build\src\ho
+Event: 43.163 Thread 0x000002131292f800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$groupBy$3$adapted(Lscala/Tuple2;)Ljava/lang/Object;> (0x00000007846c4500) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hotspot\workspace\build\src\hotspot\src\share\vm\interpret
+Event: 43.165 Thread 0x000002131292f800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$groupBy$4(Lscala/collection/mutable/Builder;Lscala/Tuple2;)Lscala/collection/mutable/Builder;> (0x00000007846d2f98) thrown at [C:\cygwin64\tmp\openjdk-jdk8u-windows-x64-hotspot\workspac
+
+Events (10 events):
+Event: 43.401 loading class scala/Function2
+Event: 43.401 loading class scala/Function2 done
+Event: 43.414 Executing VM operation: RevokeBias
+Event: 43.415 Executing VM operation: RevokeBias done
+Event: 43.422 loading class org/mule/weave/v2/parser/ast/variables/NameIdentifier
+Event: 43.422 loading class org/mule/weave/v2/parser/ast/variables/NameIdentifier done
+Event: 43.423 loading class org/mule/weave/v2/parser/ast/variables/NameIdentifier
+Event: 43.423 loading class org/mule/weave/v2/parser/ast/variables/NameIdentifier done
+Event: 43.701 Executing VM operation: CollectForMetadataAllocation
+Event: 43.701 Executing VM operation: CollectForMetadataAllocation done
+
+
+Dynamic libraries:
+0x00007ff753c50000 - 0x00007ff753c8a000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\bin\javaw.exe
+0x00007ff9f2070000 - 0x00007ff9f2266000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff9f05b0000 - 0x00007ff9f066d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9efc40000 - 0x00007ff9eff09000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9f11e0000 - 0x00007ff9f128c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9f18b0000 - 0x00007ff9f194e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9f0fb0000 - 0x00007ff9f104c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9f1970000 - 0x00007ff9f1a9b000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9f1aa0000 - 0x00007ff9f1c40000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9efac0000 - 0x00007ff9efae2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9f00d0000 - 0x00007ff9f00fa000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff9ef9b0000 - 0x00007ff9efabb000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9efb70000 - 0x00007ff9efc0d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff9ef800000 - 0x00007ff9ef900000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff9e5dd0000 - 0x00007ff9e606b000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.746_none_ca02b4b61b8320a4\COMCTL32.dll
+0x00007ff9f1fa0000 - 0x00007ff9f1fd0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff9d8010000 - 0x00007ff9d80ff000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\msvcr120.dll
+0x00007ff9db3e0000 - 0x00007ff9db486000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\msvcp120.dll
+0x000000006bcc0000 - 0x000000006c4bf000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\server\jvm.dll
+0x00007ff9f1960000 - 0x00007ff9f1968000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff9e3d30000 - 0x00007ff9e3d39000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff9f1eb0000 - 0x00007ff9f1f1b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9e69c0000 - 0x00007ff9e69e7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9e7300000 - 0x00007ff9e730a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9eb4a0000 - 0x00007ff9eb4af000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\verify.dll
+0x00007ff9ea360000 - 0x00007ff9ea388000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\java.dll
+0x00007ff9ea160000 - 0x00007ff9ea176000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\zip.dll
+0x00007ff9f0670000 - 0x00007ff9f0db2000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff9ed610000 - 0x00007ff9edda0000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007ff9f0250000 - 0x00007ff9f05a6000 	C:\WINDOWS\System32\combase.dll
+0x00007ff9ef140000 - 0x00007ff9ef16c000 	C:\WINDOWS\SYSTEM32\Wldp.dll
+0x00007ff9f0dd0000 - 0x00007ff9f0e7e000 	C:\WINDOWS\System32\SHCORE.dll
+0x00007ff9f01f0000 - 0x00007ff9f0245000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ff9ef6e0000 - 0x00007ff9ef706000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ff9ea550000 - 0x00007ff9ea55d000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\management.dll
+0x00007ff9ea140000 - 0x00007ff9ea15a000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\net.dll
+0x00007ff9eeec0000 - 0x00007ff9eef2a000 	C:\WINDOWS\system32\mswsock.dll
+0x00007ff9dc890000 - 0x00007ff9dc8a7000 	C:\WINDOWS\system32\napinsp.dll
+0x00007ff9dc870000 - 0x00007ff9dc88b000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x00007ff9eaa10000 - 0x00007ff9eaa25000 	C:\WINDOWS\system32\wshbth.dll
+0x00007ff9e98b0000 - 0x00007ff9e98cd000 	C:\WINDOWS\system32\NLAapi.dll
+0x00007ff9eebb0000 - 0x00007ff9eebeb000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ff9eebf0000 - 0x00007ff9eecbb000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ff9f0dc0000 - 0x00007ff9f0dc8000 	C:\WINDOWS\System32\NSI.dll
+0x00007ff9dc850000 - 0x00007ff9dc862000 	C:\WINDOWS\System32\winrnr.dll
+0x00007ff9e6e90000 - 0x00007ff9e6e9a000 	C:\Windows\System32\rasadhlp.dll
+0x00007ff9e6d70000 - 0x00007ff9e6def000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x00007ff9efc10000 - 0x00007ff9efc37000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff9ea0f0000 - 0x00007ff9ea102000 	C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.jdk.win32.x86_64_1.0.0.202004281356\jre\bin\nio.dll
+0x00007ff9ef0a0000 - 0x00007ff9ef0b8000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007ff9ee860000 - 0x00007ff9ee894000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007ff9ef6a0000 - 0x00007ff9ef6ce000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ff9efaf0000 - 0x00007ff9efb70000 	C:\WINDOWS\System32\bcryptprimitives.dll
+0x00007ff9ef090000 - 0x00007ff9ef09c000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007ff9e8ff0000 - 0x00007ff9e9007000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x00007ff9e8fd0000 - 0x00007ff9e8fed000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+
+VM Arguments:
+jvm_args: -Djava.library.path= -Dlog4j.skipJansi=true -Djava.io.tmpdir=C:\Users\user\AppData\Local\Temp\ -Dorg.glassfish.grizzly.DEFAULT_MEMORY_MANAGER=org.glassfish.grizzly.memory.HeapMemoryManager -Dmule.testingMode -Dmunit.server.port=46684 -Dlog4j.configurationFile=C:\Users\user\AppData\Local\Temp\munit-temp-dir\munittarget8937214549828329061\test-classes\log4j2-test.xml -Dfile.encoding=UTF-8 
+java_command: org.mule.munit.remote.RemoteRunner -run_configuration C:\Users\user\AppData\Local\Temp\munit-temp-dir\munitworkingdir1513896911709952743\run-configuration.json
+java_class_path (initial): C:\AnypointStudio-7.6.0-win64\AnypointStudio\plugins\org.mule.tooling.ui.contribution.munit_2.6.0.202006301835\lib\munit-remote-jar-with-dependencies.jar;C:\Users\user\AppData\Local\Temp\munit-temp-dir\munittarget8937214549828329061\test-classes\log4j2-test.xml
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jre1.8.0_201
+CLASSPATH=C:\Program Files\Java\jdk1.8.0_201\lib
+PATH=E:\app\user\product\11.2.0\dbhome_2\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\zookeeper-3.6.1\bin;%JAVA_HOME%\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Program Files\Java\jdk1.8.0_201\bin
+USERNAME=user
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.804)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16649324k(3899396k free), swap 30579592k(5512k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.232-b09) for windows-amd64 JRE (1.8.0_232-b09), built on Oct 18 2019 15:06:13 by "jenkins" with MS VC++ 12.0 (VS2013)
+
+time: Mon Mar 15 14:50:13 2021
+timezone: India Standard Time
+elapsed time: 43 seconds (0d 0h 0m 43s)
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="cicd-sample-test-suite.xml" />
+	<munit:test name="cicd-sample-test-suite-cicd-sampleFlowTest" doc:id="cc9ccfef-1f33-427a-8da9-c896842e92d6" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to cicd-sampleFlow" doc:id="7684c0d1-241c-4dfa-a9c3-8cb10c05b308" name="cicd-sampleFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="3cc64411-f3f0-4357-9c4a-9d8bcecb7fdf" actual='#["cicd"]' expected='#["cicd"]' message='#["Payload is error"]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
